@@ -144,7 +144,7 @@ export default function Home() {
               Apply now
             </button>
 
-            <BiMenu size={40} className="cursor-pointer hover:text-accent-blue"/>
+            <BiMenu size={40} className="md:hidden cursor-pointer hover:text-accent-blue"/>
           </nav>
         </div>
 
