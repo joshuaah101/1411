@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BiPhoneCall, BiStar } from "react-icons/bi";
 import { useState, useEffect } from "react";
+import Marquee from "react-fast-marquee";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -140,51 +141,55 @@ export default function Home() {
             make a lasting impact in the industry.
           </div>
 
-          <marquee behavior="" direction="left">
-            <div className="flex gap-2">
-              <Image
-                src="/dc.png"
-                alt="datacamp donates"
-                width={100}
-                height={100}
-              />
+          <Marquee gradient={false} speed={50}>
+            <Image
+              src="/axa-logo.png"
+              alt="Axa"
+              width={100}
+              height={100}
+              className="mx-4"
+            />
 
-              <Image
-                src="/axa-logo.png"
-                alt="Axa"
-                width={100}
-                height={100}
-              />
+            <Image
+              src="/vida.png"
+              alt="vida"
+              width={100}
+              height={100}
+              className="mx-4"
+            />
 
-              <Image
-                src="/vida.png"
-                alt="vida"
-                width={100}
-                height={100}
-              />
+            <Image
+              src="/vfd-tech.png"
+              alt="vfd"
+              width={100}
+              height={100}
+              className="mx-4"
+            />
 
-              <Image
-                src="/vfd-tech.png"
-                alt="vfd"
-                width={100}
-                height={100}
-              />
+            <Image
+              src="/coa.jpg"
+              alt="coa"
+              width={100}
+              height={100}
+              className="mx-4"
+            />
 
-              <Image
-                src="/coa.jpg"
-                alt="coa"
-                width={100}
-                height={100}
-              />
+            <Image
+              src="/anchor.png"
+              alt="anchor"
+              width={100}
+              height={100}
+              className="mx-4"
+            />
 
-              <Image
-                src="/anchor.png"
-                alt="anchor"
-                width={100}
-                height={100}
-              />
-            </div>
-          </marquee>
+            <Image
+              src="/dc.png"
+              alt="datacamp donates"
+              width={100}
+              height={100}
+              className="mx-4"
+            />
+          </Marquee>
         </section>
       </main>
     </div>
