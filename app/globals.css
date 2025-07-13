@@ -1,9 +1,25 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  /* --breakpoint-*: initial;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px; */
+
+  --color-accent-blue: #53c6ce;
+  --color-deep-blue: #171b2c;
+}
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
+
+/* .accent-blue{
+  background-color: #53c6ce;
+  color: #171b2c;
+} */
 
 @theme inline {
   --color-background: var(--background);
