@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { BiPhoneCall, BiStar } from "react-icons/bi";
 import { useState, useEffect } from "react";
-import Marquee from "react-fast-marquee";
+import Marquee from "react-fast-marquee"
+import { BiMenu } from "react-icons/bi";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,30 +32,30 @@ export default function Home() {
           Your browser does not support the video tag.
         </video>
 
-        <div className="absolute top-[28%] left-25 flex flex-col gap-8 w-[50%]">
-          <h1 className="text-5xl font-bold leading-[1.2]">
+        <div className="absolute top-[28%] px-6 lg:px-0 lg:left-25 flex flex-col gap-8 lg:w-[50%]">
+          <h1 className="text-3xl lg:text-5xl font-bold leading-[1.2]">
             People and Technology, Perfectly Aligned. The Future Is You.
           </h1>
-          <p className="text-md xl:text-lg">
+          <p className="text-md lg:text-lg">
             We're empowering individuals, startups, and businesses unlock their
             full potential in the dynamic tech world. We create environment
             where technology is leveraged to solve real-world problems, enhance
             lives, and build a sustainable future.
           </p>
-          <div className="flex gap-5 items-center">
+          <div className="flex flex-col md:flex-row gap-5 md:items-center">
             <button className="btn bg-deep-blue text-accent-blue py-6">
               Get Scholarship
             </button>
 
             <div className="flex gap-5 items-center">
               <span>Be Future-Ready</span>
-              <BiStar className="text-accent-blue" />
+              <BiStar className="text-accent-blue" size={30}/>
             </div>
           </div>
         </div>
 
         <div className="sticky top-0">
-          <div className="bg-deep-blue flex justify-center gap-2 py-2 w-full">
+          <div className="bg-deep-blue hidden md:flex justify-center gap-2 py-2 w-full">
             <span className="text-xs">
               We empower individuals and organizations through cutting-edge tech
               training.
@@ -66,51 +67,88 @@ export default function Home() {
           </div>
 
           <nav
-            className={`flex justify-center gap-50 items-center py-2 ${
+            className={`flex ps-5 pe-5 md:ps-0 md:pe-0 py-3 justify-between md:justify-center lg:gap-70 items-center ${
               scrolled ? "bg-white text-deep-blue" : "text-white bg-transparent"
             }`}
           >
             <Link href="/">
-              <Image src="/logo.png" alt="Logo" width={120} height={80} />
+              <Image src="/logo.png" alt="Logo" width={130} height={80} />
             </Link>
 
-            <ul className="flex gap-10">
+            <ul className="hidden md:flex gap-10">
               <Link
                 href="#"
                 className="text-base font-medium hover:text-accent-blue transition-all duration-300 ease-in"
               >
-                Why 1411 Group
+                <li>Why 1411 Group</li>
               </Link>
 
               <Link
                 href="#"
                 className="text-base font-medium hover:text-accent-blue transition-all duration-300 ease-in"
               >
-                About Us
+                <li>About Us</li>
               </Link>
+
+              <div className="relative group">
+                <Link
+                  href="#"
+                  className="text-base font-medium hover:text-accent-blue transition-all duration-300 ease-in"
+                >
+                  <li>Bootcamp</li>
+                </Link>
+
+                {/* secondary menu */}
+                <div className="absolute rounded-md bg-deep-blue shadow-2xl shadow-accent-blue text-white ps-10 py-6 w-[350px] hidden z-50 group-hover:block transition-all duration-300 ease-in">
+                  <ul className="flex flex-col gap-5">
+                    <Link
+                      href="#"
+                      className="text-sm font-medium hover:text-accent-blue transition-all duration-300 ease-in"
+                    >
+                      <li>Software Engineering+Cloud</li>
+                    </Link>
+
+                    <Link
+                      href="#"
+                      className="text-sm font-medium hover:text-accent-blue transition-all duration-300 ease-in"
+                    >
+                      <li>Data Analysis</li>
+                    </Link>
+
+                    <Link
+                      href="#"
+                      className="text-sm font-medium hover:text-accent-blue transition-all duration-300 ease-in"
+                    >
+                      <li>Project Management</li>
+                    </Link>
+
+                    <Link
+                      href="#"
+                      className="text-sm font-medium hover:text-accent-blue transition-all duration-300 ease-in"
+                    >
+                      <li>Software Quality Assurance</li>
+                    </Link>
+                  </ul>
+                </div>
+              </div>
 
               <Link
                 href="#"
                 className="text-base font-medium hover:text-accent-blue transition-all duration-300 ease-in"
               >
-                Bootcamp
-              </Link>
-
-              <Link
-                href="#"
-                className="text-base font-medium hover:text-accent-blue transition-all duration-300 ease-in"
-              >
-                Contact Us
+                <li>Contact Us</li>
               </Link>
             </ul>
 
-            <button className="btn bg-deep-blue hover:bg-accent-blue transition-all duration-300 ease-in border-0">
+            <button className="hidden md:flex btn bg-deep-blue hover:bg-accent-blue transition-all duration-300 ease-in border-0">
               Apply now
             </button>
+
+            <BiMenu size={40} className="cursor-pointer hover:text-accent-blue"/>
           </nav>
         </div>
 
-        <section className="absolute bottom-[-18px] left-1/4">
+        <section className="hidden lg:flex absolute bottom-[-18px] left-1/4">
           <div className="flex gap-10 justify-center items-center py-8">
             <div className="flex flex-col gap- border-l-2 border-accent-blue px-2">
               <h2 className="text-lg font-medium">Discover 1411 </h2>
@@ -135,8 +173,8 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="flex bg-white justify-center items-center px-60 gap-4">
-          <div className="py-14 text-gray-400 text-xl md:text-right">
+        <section className="flex flex-col md:flex-row bg-white justify-center items-center px-6 lg:px-60 gap-4 overflow-hidden">
+          <div className="py-14 text-gray-400 text-sm md:text-xl md:text-right">
             Our trusted partners and clients, together, we drive success and
             make a lasting impact in the industry.
           </div>
